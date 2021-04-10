@@ -1,16 +1,19 @@
 # Generative Adversarial Network (GAN)
 GANs is a relatively new technique to a sublass of machine learning problems known as *"generative modelling"* employed with the help of **deep learning methods**.\
 The idea of such a model is to identify a certain set of *regularities* in a large batch of data, and use this to train a model which can "generate" *plausible* new examples that seem as though they are from the same dataset.\
-In its essence, there are **2** sub models to this problem: A **generator**(for generating new examples) and a **discriminator**(for testing the plausibility of the generated samples). 
+In its essence, there are **2** sub models to this problem: A **generator**(for generating new examples) and a **discriminator**(for testing the plausibility of the generated samples).\
 
-# Installation
+# Overview
+At a very abstract level, I have trained a neural network to identify digits from 0-9 in the **Devanagari script** and piped this predicted output to the GAN which then generates examples from the (English) **MNIST dataset**.\
+Note that since I have made a very basic implementation of the GAN (ie-without the use of any *major* scientfic libraries like ```Tensorflow```, ```PyTorch``` etc.), I feed in a single (*homogenous*) digit list at a time to the GAN for generating examples. This slow process is largely attributed to the fact that the aforementioned scientific libraries run computations primarily on the GPU as opposed to calculations on the CPU (done in the case of ```numpy```).
+
+## Devanagari Digit classifier
+
+### Result
 
 ## Vanilla GAN
 ### Result
 
-
-## Generator and discriminator
-### Result
 
 ## The final thing
 ### Result
