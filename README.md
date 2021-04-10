@@ -15,6 +15,8 @@ Although the ```max_epoch``` value is set at 100, it seldom takes those many ste
 The neural net converges fairly quickly as can be seen below
 ![Epoch and cost value](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.11.17%20PM.png)
 A fairly high accuracy of **98.75%** was achieved with the help of this model. 
+![Model accuracy](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.16.51%20PM.png)
+[This](https://colab.research.google.com/drive/1HkDEJfKoFRFzJh6OMn1LGIxiejoVsuKS#scrollTo=FQIysSno7Nax) is the link to the Google Colab notebook
 
 ## Vanilla GAN
 ### Result
