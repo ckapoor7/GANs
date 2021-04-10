@@ -12,6 +12,9 @@ I was lucky enough to find the CSV files of the MNIST images of the devanagari s
 I used the ```MLPClassifier``` function from the ```scikit``` module to train the neural network. After a bit of trial and error, working with **80 hidden layers**, and an initial learning rate of 0.1 and a ```max_epoch``` value of 100, a fairly high prediction accuracy was achieved.\
 Although the ```max_epoch``` value is set at 100, it seldom takes those many steps, and converges a fair amount of iterations before.
 ### Result
+The neural net converges fairly quickly as can be seen below
+![Epoch and cost value](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.11.17%20PM.png)
+A fairly high accuracy of **98.75%** was achieved with the help of this model. 
 
 ## Vanilla GAN
 ### Result
