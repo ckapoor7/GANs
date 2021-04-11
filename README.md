@@ -16,6 +16,8 @@ The neural net converges fairly quickly as can be seen below
 ![Epoch and cost value](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.11.17%20PM.png)
 A fairly high accuracy of **98.75%** was achieved with the help of this model. 
 ![Model accuracy](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.16.51%20PM.png)
+I have also generated a table for the **actual Vs predicted** values of the digits from the validation set
+![validation set](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.05.27%20AM.png)
 
 ## Vanilla GAN
 A *"vanilla GAN"* for the sole reason that it is a very rudimentary implementation, which is **not at all** optimized for speed. This is a complete end to end implmentation from scratch done in the large part using ```numpy``` arrays.  As an input, I pass it a list of a **single digit** from 0-9 which consequently starts the generation process of fake examples. A total of **100** ```epochs``` seems to be sufficient in producing plausible images.\
@@ -27,19 +29,20 @@ Starting out at ```epoch``` 0, we see how the GAN begins its learning procedure.
 ![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%208.54.08%20AM.png)
 ...and we have something much more plausible towards the end
 ![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%208.58.44%20AM.png)
-Note that the **learning rate (LR)** decays steadily in accordance with our **decay rate** ($$10^{-4}$$)
+Note that the **learning rate (LR)** decays steadily in accordance with our **decay rate** (10^-4).
 
 
 ## The final thing
 The final thing is an amalgamation of the Vanilla GAN model as well as the digit classifier. I take a Devanagari digit image as an input and generate an MNIST digit in english as the output. Concretely, the ouput of the digit classifier can be thought of as being *"piped"* into the GAN model. Everything else remains the same as described above.\
 ### Result
-I ran the code for
-
-
-# Drawbacks
+I ran the code for a known digit from the Devanagari set (from the table). In the input that I have provided to the generator, ```y_pred[3]``` corresponds to digit 5.\
+For ```epoch``` 0, we have a bunch of seemingly random pixels
+![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.12.44%20AM.png)
+And towards the end, we have something better than what we started with (that passes as an image of digit 5)
+![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.17.53%20AM.png)
 
 # References
-The primary resource I used for my implementation for this was Ian Goodfellow's research paper available [here](https://arxiv.org/pdf/1406.2661.pdf).\
+The primary resource I used for my implementation for this was Ian Goodfellow's research paper available [here](https://arxiv.org/pdf/1406.2661.pdf). Of course since I am not really well versed with some terms in the paper, a ton of googling did serve its purpose:P\
 In some places (**cross-entropy loss calculation**) I have changed my implementation with respect to what is described in the paper to make it computationally less expensive whilst achieveing a nearly similar result if I would have done otherwise.
 
 
