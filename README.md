@@ -21,7 +21,7 @@ I have also generated a table for the **actual Vs predicted** values of the digi
 
 ## Vanilla GAN
 A *"vanilla GAN"* for the sole reason that it is a very rudimentary implementation, which is **not at all** optimized for speed. This is a complete end to end implmentation from scratch done in the large part using ```numpy``` arrays.  As an input, I pass it a list of a **single digit** from 0-9 which consequently starts the generation process of fake examples. A total of **100** ```epochs``` seems to be sufficient in producing plausible images.\
-I map the examples onto a 4x4 grid. Since the input pixels were scaled to a value between 0-1, for generating the I have converted the scaled feature back to grayscale values. Also, for the ease of loading in the CSV files for the MNIST digits, I used the ```keras``` backend framework to cut down (a tad bit significantly) on my work. At an average, training the GAN for a single digit seems to take about 2 minutes and 50 seconds which is not too bad for a first attempt:)\
+I map the examples onto a 4x4 grid. Since the input pixels were scaled to a value between 0-1, for generating the I have converted the scaled feature back to grayscale values. Also, for the ease of loading in the CSV files for the MNIST digits, I used the ```keras``` backend framework to cut down (a tad bit significantly) on my work. At an average, training the GAN for a single digit seems to take about **3 minutes** which is not too bad for a first attempt:)\
 The Google colab notebook can be found [here](https://colab.research.google.com/drive/1P7bhxQaUWDE-b3WcbfoIdMmB_ovtVOxZ)
 ### Result
 I ran the code for generating examples of the digit 0.\
@@ -34,12 +34,14 @@ Note that the **learning rate (LR)** decays steadily in accordance with our **de
 
 ## The final thing
 The final thing is an amalgamation of the Vanilla GAN model as well as the digit classifier. I take a Devanagari digit image as an input and generate an MNIST digit in english as the output. Concretely, the ouput of the digit classifier can be thought of as being *"piped"* into the GAN model. Everything else remains the same as described above.\
+The notebook for this can be found [here](https://colab.research.google.com/drive/1YxvCLGCMGvwXd5LM4NTGwWcb56pMyn0U#scrollTo=S_d8m1XBJcBM)
 ### Result
 I ran the code for a known digit from the Devanagari set (from the table). In the input that I have provided to the generator, ```y_pred[3]``` corresponds to digit 5.\
 For ```epoch``` 0, we have a bunch of seemingly random pixels
 ![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.12.44%20AM.png)
 And towards the end, we have something better than what we started with (that passes as an image of digit 5)
 ![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.17.53%20AM.png)
+This took 2 minutes and 54 seconds to complete execution.
 
 # References
 The primary resource I used for my implementation for this was Ian Goodfellow's research paper available [here](https://arxiv.org/pdf/1406.2661.pdf). Of course since I am not really well versed with some terms in the paper, a ton of googling did serve its purpose:P\
