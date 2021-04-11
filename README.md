@@ -18,14 +18,23 @@ A fairly high accuracy of **98.75%** was achieved with the help of this model.
 ![Model accuracy](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.16.51%20PM.png)
 
 ## Vanilla GAN
-A *"vanilla GAN"* for the sole reason that it is a very rudimentary implementation, which is **not at all** optimized for speed. This is a complete end to end implmentation from scratch done in the large part using ```numpy``` arrays.  As an input, I pass it a list of a **single digit** from 0-9 which consequently starts the generation process of fake examples. A total of **95** ```epochs``` seems to be sufficient in producing plausible images.\
+A *"vanilla GAN"* for the sole reason that it is a very rudimentary implementation, which is **not at all** optimized for speed. This is a complete end to end implmentation from scratch done in the large part using ```numpy``` arrays.  As an input, I pass it a list of a **single digit** from 0-9 which consequently starts the generation process of fake examples. A total of **100** ```epochs``` seems to be sufficient in producing plausible images.\
 I map the examples onto a 4x4 grid. Since the input pixels were scaled to a value between 0-1, for generating the I have converted the scaled feature back to grayscale values. Also, for the ease of loading in the CSV files for the MNIST digits, I used the ```keras``` backend framework to cut down (a tad bit significantly) on my work. At an average, training the GAN for a single digit seems to take about 2 minutes and 50 seconds which is not too bad for a first attempt:)\
 The Google colab notebook can be found [here](https://colab.research.google.com/drive/1P7bhxQaUWDE-b3WcbfoIdMmB_ovtVOxZ)
 ### Result
+I ran the code for generating examples of the digit 0.\
+Starting out at ```epoch``` 0, we see how the GAN begins its learning procedure...\
+![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%208.54.08%20AM.png)
+...and we have something much more plausible towards the end
+![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%208.58.44%20AM.png)
+Note that the **learning rate (LR)** decays steadily in accordance with our **decay rate** ($$10^{-4}$$)
 
 
 ## The final thing
+The final thing is an amalgamation of the Vanilla GAN model as well as the digit classifier. I take a Devanagari digit image as an input and generate an MNIST digit in english as the output. Concretely, the ouput of the digit classifier can be thought of as being *"piped"* into the GAN model. Everything else remains the same as described above.\
 ### Result
+I ran the code for
+
 
 # Drawbacks
 
