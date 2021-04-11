@@ -13,11 +13,11 @@ I used the ```MLPClassifier``` function from the ```scikit``` module to train th
 Although the ```max_epoch``` value is set at 100, it seldom takes those many steps, and converges a fair amount of iterations before. [This](https://colab.research.google.com/drive/1HkDEJfKoFRFzJh6OMn1LGIxiejoVsuKS#scrollTo=FQIysSno7Nax) is the link to the Google Colab notebook.
 ### Result
 The neural net converges fairly quickly as can be seen below
-![Epoch and cost value](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.11.17%20PM.png)
+![Epoch and cost value](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/nn-loss.png)
 A fairly high accuracy of **98.75%** was achieved with the help of this model. 
-![Model accuracy](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-10%20at%2010.16.51%20PM.png)
+![Model accuracy](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/nn-accuracy.png)
 I have also generated a table for the **actual Vs predicted** values of the digits from the validation set
-![validation set](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.05.27%20AM.png)
+![validation set](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/nn-pred.png)
 
 ## Vanilla GAN
 A *"vanilla GAN"* for the sole reason that it is a very rudimentary implementation, which is **not at all** optimized for speed. This is a complete end to end implmentation from scratch done in the large part using ```numpy``` arrays.  As an input, I pass it a list of a **single digit** from 0-9 which consequently starts the generation process of fake examples. A total of **100** ```epochs``` seems to be sufficient in producing plausible images.\
@@ -26,9 +26,9 @@ The Google colab notebook can be found [here](https://colab.research.google.com/
 ### Result
 I ran the code for generating examples of the digit 0.\
 Starting out at ```epoch``` 0, we see how the GAN begins its learning procedure...\
-![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%208.54.08%20AM.png)
+![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/vg-itr0.png)
 ...and we have something much more plausible towards the end
-![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%208.58.44%20AM.png)
+![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/vg-itr95.png)
 Note that the **learning rate (LR)** decays steadily in accordance with our **decay rate** (10^-4).
 
 
@@ -38,9 +38,9 @@ The notebook for this can be found [here](https://colab.research.google.com/driv
 ### Result
 I ran the code for a known digit from the Devanagari set (from the table). In the input that I have provided to the generator, ```y_pred[3]``` corresponds to digit 5.\
 For ```epoch``` 0, we have a bunch of seemingly random pixels
-![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.12.44%20AM.png)
+![epoch 0](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/final-itr0.png)
 And towards the end, we have something better than what we started with (that passes as an image of digit 5)
-![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/Screen%20Shot%202021-04-11%20at%209.17.53%20AM.png)
+![epoch 95](https://github.com/ckapoor7/bare-bones-GANs/blob/main/results/final-itr95.png)
 This took 2 minutes and 54 seconds to complete execution.
 
 # References
