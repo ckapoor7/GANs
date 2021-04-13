@@ -1,5 +1,5 @@
 # Generative Adversarial Network (GAN)
-GANs is a relatively new technique to a sublass of machine learning problems known as *"generative modelling"* employed with the help of **deep learning methods**.\
+GANs is a relatively new technique to a subclass of machine learning problems known as *"generative modelling"* employed with the help of **deep learning methods**.\
 The idea of such a model is to identify a certain set of *regularities* in a large batch of data, and use this to train a model which can "generate" *plausible* new examples that seem as though they are from the same dataset.\
 In its essence, there are **2** sub models to this problem: A **generator**(for generating new examples) and a **discriminator**(for testing the plausibility of the generated samples).
 
@@ -45,6 +45,7 @@ This took 2 minutes and 54 seconds to complete execution.
 
 # References
 The primary resource I used for my implementation for this was Ian Goodfellow's research paper available [here](https://arxiv.org/pdf/1406.2661.pdf). Of course since I am not really well versed with some terms in the paper, a ton of googling did serve its purpose:P\
-In some places (**cross-entropy loss calculation**) I have changed my implementation with respect to what is described in the paper to make it computationally less expensive whilst achieveing a nearly similar result if I would have done otherwise.
+In some places (**cross-entropy loss calculation**) I have changed my implementation with respect to what is described in the paper to make it computationally less expensive whilst achieveing a nearly similar result if I would have done otherwise.\
+I have also used a technique for initializing the weight matrix which was not known to me before known as the **Xavier initialization**. [This](https://www.deeplearning.ai/ai-notes/initialization/) article gives a really nice overview and mathematical reasoning behind its efficacy.
 
 
